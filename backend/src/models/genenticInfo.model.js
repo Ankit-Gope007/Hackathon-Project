@@ -1,11 +1,6 @@
 import mongoose,{Schema} from "mongoose";
 
 const geneticInfoSchema = new mongoose.Schema({
-    GeneticID:{
-        type: String,
-        required: true,
-        unique: true
-    },
     DiseaseID:{
         type: Schema.Types.ObjectId,
         ref: 'Disease',

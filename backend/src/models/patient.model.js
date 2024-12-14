@@ -1,11 +1,6 @@
 import mongoose,{ Schema } from "mongoose";
 
 const patientSchema = new mongoose.Schema({
-    PatientId:{
-        type: String,
-        required: true,
-        unique: true
-    },
     DiseaseId:{
         type: Schema.Types.ObjectId,
         ref: 'Disease', 

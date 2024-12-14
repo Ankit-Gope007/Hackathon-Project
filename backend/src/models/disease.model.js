@@ -1,11 +1,6 @@
 import mongoose,{ Schema } from "mongoose";
 
 const diseaseSchema = new mongoose.Schema({
-    DiseaseId:{
-        type: String,
-        required: true,
-        unique: true
-    },
     Name:{
         type: String,
         unique: true
