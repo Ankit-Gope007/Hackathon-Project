@@ -64,6 +64,25 @@ const getDiseaseByNameOrICDcode = asyncHandler(async (req,res) => {
     )
 });
 
+const removeDisease = asyncHandler(async(req,res) => {
+    const {ICDcode,id} = req.body;
+    if (!ICDcode && !id) {
+        throw new ApiError(400, 'Please fill all fields');
+    }
+    if (ICDcode) {
+        await Disease.findOneAndDelete({ICDcode});
+    }
+    else {
+        await Disease.findByIdAndDelete(id);
+    }
+    return res
+    .status(200)
+    .json(
+        new ApiResponse(200,'Disease removed successfully')
+    );
+});
+
+
 
 // const getDiseaseBySymptoms = asyncHandler(async (req,res) => {}); i will see this later
 
@@ -75,5 +94,6 @@ const getDiseaseByNameOrICDcode = asyncHandler(async (req,res) => {
 export {
     registerDisease,
     getAllRegisteredDiseases,
-    getDiseaseByNameOrICDcode
+    getDiseaseByNameOrICDcode,
+    removeDisease,
 };
