@@ -5,6 +5,10 @@ const researchSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'Disease',
     },
+    DiseaseICDcode:{
+        type: String,
+        required: true
+    },
     TitleOfStudy:{
         type: String,
         required: true
@@ -21,10 +25,10 @@ const researchSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Researcher_InstitutionInfo:{
+    ResearcherInstitutionInfo:[],
+    LinkToPapers:{
         type: String,
-        required: true
-    },
+    }
 },
     {timestamps:true});
 

@@ -15,9 +15,11 @@ app.use(cookieParser())
 
 // Importing Routes
 import diseaseRoutes from "./routes/disease.route.js"
+import researchRoutes from "./routes/research.route.js"
 
 // Using Routes
-app.use("/api/DEVCoders",diseaseRoutes)
+app.use("/api/DEVCoders/Disease",diseaseRoutes)
+app.use("/api/DEVCoders/Research",researchRoutes)
 
 
 export {app}
