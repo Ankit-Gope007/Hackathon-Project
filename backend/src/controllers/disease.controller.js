@@ -57,6 +57,10 @@ const getDiseaseByNameOrICDcode = asyncHandler(async (req,res) => {
         ]
     }).select('-__v -createdAt -updatedAt');
 
+    if (!disease){
+        throw new ApiError (404,"No disease found with the given name or ICD code");
+    }
+
     return res
     .status(200)
     .json(
@@ -84,7 +88,27 @@ const removeDisease = asyncHandler(async(req,res) => {
 
 
 
-// const getDiseaseBySymptoms = asyncHandler(async (req,res) => {}); i will see this later
+const getDiseaseBySymptoms = asyncHandler(async (req,res) => {
+    const {Symptoms} = req.body;
+    if (!Symptoms) {
+        throw new ApiError(400, 'Please fill all fields');
+    }
+    const disease = await Disease.find({
+        Symptoms: {
+            $in: Symptoms
+        }
+    }).select('-__v -createdAt -updatedAt');
+
+    if (!disease){
+        throw new ApiError (404,"No disease found with the given symptoms");
+    }
+
+    return res
+    .status(200)
+    .json(
+        new ApiResponse(200,disease,"Diseases fetched successfully")
+    )
+}); 
 
 // const 
 
@@ -96,4 +120,5 @@ export {
     getAllRegisteredDiseases,
     getDiseaseByNameOrICDcode,
     removeDisease,
+    getDiseaseBySymptoms,
 };

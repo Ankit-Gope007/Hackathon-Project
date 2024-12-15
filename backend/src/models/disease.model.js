@@ -14,11 +14,7 @@ const diseaseSchema = new mongoose.Schema({
         required: true
 
     },
-    Symptoms: {
-        type: String,
-        required: true,
-        
-    },
+    Symptoms: [],
     GeneticInformation : {
         type: String,
         required: true,
