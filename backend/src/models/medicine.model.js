@@ -5,6 +5,10 @@ const medicineSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'Disease',
     },
+    DiseaseICDcode:{
+        type: String,
+        required: true
+    },
     DrugName:{
         type: String,
         required: true

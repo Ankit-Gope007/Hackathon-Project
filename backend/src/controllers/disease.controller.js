@@ -110,11 +110,6 @@ const getDiseaseBySymptoms = asyncHandler(async (req,res) => {
     )
 }); 
 
-// const 
-
-
-
-
 export {
     registerDisease,
     getAllRegisteredDiseases,
