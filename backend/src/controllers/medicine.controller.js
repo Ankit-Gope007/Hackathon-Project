@@ -111,5 +111,4 @@ export {
     getMedicineByDiseaseICDcode,
     getMedicineByDrugName,
     getMedicineByFDAApprovalStatus,
-    getMedicineByMechanismOfAction
 };
