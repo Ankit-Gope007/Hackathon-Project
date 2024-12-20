@@ -5,6 +5,10 @@ const geneticInfoSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'Disease',
     },
+    DiseaseICD:{
+        type: String,
+        required: true
+    },
     GeneInvolved:{
         type: String,
         required: true

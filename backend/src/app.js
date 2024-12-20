@@ -18,12 +18,14 @@ import diseaseRoutes from "./routes/disease.route.js"
 import researchRoutes from "./routes/research.route.js"
 import medicineRoutes from "./routes/medicine.route.js"
 import patientRoutes from "./routes/patient.route.js"
+import geneticInfoRoutes from "./routes/geneticInfo.route.js"
 
 // Using Routes
 app.use("/api/DEVCoders/Disease",diseaseRoutes)
 app.use("/api/DEVCoders/Research",researchRoutes)
 app.use("/api/DEVCoders/Medicine",medicineRoutes)
 app.use("/api/DEVCoders/Patient",patientRoutes)
+app.use("/api/DEVCoders/GeneticInfo",geneticInfoRoutes)
 
 
 export {app}
