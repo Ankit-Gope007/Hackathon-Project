@@ -5,11 +5,15 @@ const geoDistributionSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'Disease',
     },
-    RegionName:{
+    DiseaseICD:{
         type: String,
         required: true
     },
-    workspaceId:{
+    CountryName:{
+        type: String,
+        required: true
+    },
+    RegionName:{
         type: String,
         required: true
     },

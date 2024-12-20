@@ -19,6 +19,7 @@ import researchRoutes from "./routes/research.route.js"
 import medicineRoutes from "./routes/medicine.route.js"
 import patientRoutes from "./routes/patient.route.js"
 import geneticInfoRoutes from "./routes/geneticInfo.route.js"
+import geoDistributionRoutes from "./routes/geoDistribution.route.js"
 
 // Using Routes
 app.use("/api/DEVCoders/Disease",diseaseRoutes)
@@ -26,6 +27,7 @@ app.use("/api/DEVCoders/Research",researchRoutes)
 app.use("/api/DEVCoders/Medicine",medicineRoutes)
 app.use("/api/DEVCoders/Patient",patientRoutes)
 app.use("/api/DEVCoders/GeneticInfo",geneticInfoRoutes)
+app.use("/api/DEVCoders/GeoDistribution",geoDistributionRoutes)
 
 
 export {app}
