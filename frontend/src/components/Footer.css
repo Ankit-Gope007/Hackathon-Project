@@ -1,0 +1,28 @@
+/* Footer with Soft Grey Background */
+.footer {
+  width: 100%;
+  background-color: #f2f6fa;
+  color: #4f4f4f;
+  padding: 40px 5%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.footer a {
+  color: #0d47a1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #1565c0;
+}
+
+.footer-logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #1565c0;
+}

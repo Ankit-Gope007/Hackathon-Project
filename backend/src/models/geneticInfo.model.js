@@ -1,7 +1,7 @@
 import mongoose,{Schema} from "mongoose";
 
 const geneticInfoSchema = new mongoose.Schema({
-    DiseaseID:{
+    DiseaseId:{
         type: Schema.Types.ObjectId,
         ref: 'Disease',
     },

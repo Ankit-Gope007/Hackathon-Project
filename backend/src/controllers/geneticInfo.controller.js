@@ -18,7 +18,7 @@ const registerGeneticInfo = asyncHandler(async (req, res, next) => {
         throw new ApiError(400, "Genetic info already exists");
     }
     const geneticInfo = await GeneticInfo.create({
-        DiseaseID: disease._id,
+        DiseaseId: disease._id,
         DiseaseICD,
         GeneInvolved,
         MutationType,

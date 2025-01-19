@@ -95,6 +95,22 @@ const getResearchByInstitution = asyncHandler(async (req,res) => {
     );
 });
 
+const getResearchByName = asyncHandler(async (req,res) => {
+    const {Name} = req.body;
+
+    const disease = await Disease.findOne({ Name: Name });
+    if (!disease) {
+        throw new ApiError(404, 'Disease with the given name does not exist');
+    }
+
+    const research = await Research.find({ DiseaseId: disease._id });
+    return res
+    .status(200)
+    .json(
+        new ApiResponse(200, research, 'Research fetched successfully')
+    );
+});
+
 
 export {
     registerResearch,
@@ -102,4 +118,5 @@ export {
     getResearchByTitle,
     getResearchByICDcode,
     getResearchByInstitution,
+    getResearchByName
 };

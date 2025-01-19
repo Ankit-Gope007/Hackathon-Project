@@ -101,6 +101,27 @@ const getMedicineByFDAApprovalStatus = asyncHandler(async (req, res) => {
         );
 })
 
+const getMedicineByName = asyncHandler(async (req, res) => {
+    const { Name } = req.body;
+    if (!Name) {
+        throw new ApiError(400, 'Please provide a disease name');
+    }
+
+
+    const disease = await Disease .findOne({ Name });
+    if (!disease) {
+        throw new ApiError(404, 'Disease with the given name does not exist');
+    }
+
+    const medicine = await Medicine.find({ DiseaseId: disease._id });
+
+    return res
+        .status(200)
+        .json(
+            new ApiResponse(200, medicine, 'Medicine fetched successfully')
+        );
+});
+
  
 
 
@@ -111,4 +132,5 @@ export {
     getMedicineByDiseaseICDcode,
     getMedicineByDrugName,
     getMedicineByFDAApprovalStatus,
+    getMedicineByName
 };

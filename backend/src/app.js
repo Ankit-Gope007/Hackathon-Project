@@ -30,4 +30,5 @@ app.use("/api/DEVCoders/GeneticInfo",geneticInfoRoutes)
 app.use("/api/DEVCoders/GeoDistribution",geoDistributionRoutes)
 
 
+
 export {app}
